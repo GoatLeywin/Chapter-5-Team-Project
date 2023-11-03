@@ -19,3 +19,5 @@ def get_range(range_low, range_high):
     random_number = randint(range_low, range_high)
     
     return random_number
+
+def get_feedback():
