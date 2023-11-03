@@ -9,3 +9,4 @@ def menu():
     
     choice = int(input('Enter a selection: '))
     return choice
+
