@@ -20,8 +20,11 @@ def get_range(range_low, range_high):
     
     return random_number
 
-def get_feedback():
-  print ('hi')
+def get_feedback(random_number, guessed_number):
+    if random_number > guessed_number:
+      print ("try guessing a bigger number")
+    if random_number < guessed_number:
+      print ("try guessing a smaller number")
   
 def players():
     #accepts no arguments
