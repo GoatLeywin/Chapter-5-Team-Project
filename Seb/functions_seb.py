@@ -10,6 +10,7 @@ def players():
     player2l = input("Enter your last name: ")
     
     player1_name = player1f, player1l
-    print(player1_name)
+    
     player2_name = player2f, player2l
-    print(player2_name)
+    
+    return player1_name, player2_name
