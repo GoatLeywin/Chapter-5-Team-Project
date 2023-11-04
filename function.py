@@ -5,7 +5,7 @@ def menu():
     #display menu accepts no arguments
     #it outputs the menu choices and takes input from the user
     # for the menu item and returns the choice
-    print('\t\tMENU')
+    print('MENU')
     print('1) Start new game')
     print('2) Choose range')
     print('3) Exit game')
@@ -28,20 +28,21 @@ def get_feedback(random_number, guessed_number):
   
 def players():
     #accepts no arguments
-    #prompts user for players first name and last name
+    #prompts user for number of players
+    #prompts user for players names
     #returns all variables
     
-    #starting variable
-    player1f = input("Enter your first name: ")
-    player1l = input("Enter your last name: ")
-    player2f = input("Enter your first name: ")
-    player2l = input("Enter your last name: ")
+    #makes player list
+    player_list = []
     
-    player1_name = player1f, player1l
+    amount_of_players = int(input("How many players are there? "))
     
-    player2_name = player2f, player2l
+    for number in range(1, amount_of_players + 1):
+        print ("What is player ", number, "'s name? ", sep = '', end = '')
+        player = input('')
+        player_list.append(player)
     
-    return player1_name, player2_name
+    return player_list
 
 def check_win(random_number, guessed_number, turns):
     if random_number == guessed_number:
