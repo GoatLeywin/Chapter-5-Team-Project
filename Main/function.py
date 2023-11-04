@@ -20,8 +20,11 @@ def get_range(range_low, range_high):
     
     return random_number
 
-def get_feedback():
-  print ('hi')
+def get_feedback(random_number, guessed_number):
+    if random_number > guessed_number:
+      print ("try guessing a bigger number")
+    if random_number < guessed_number:
+      print ("try guessing a smaller number")
   
 def players():
     #accepts no arguments
@@ -39,3 +42,8 @@ def players():
     player2_name = player2f, player2l
     
     return player1_name, player2_name
+
+def check_win(random_number, guessed_number, turns):
+    if random_number == guessed_number:
+        print ("CONGRATULATIONS! You won the game the number you were looking for was", random_number)
+        print ("it took", turns, "to win")
