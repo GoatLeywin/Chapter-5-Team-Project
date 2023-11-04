@@ -13,7 +13,7 @@ def menu():
     choice = int(input('Enter a selection: '))
     return choice
 
-def get_range(range_low, range_high):
+def get_random_number(range_low, range_high):
     #accepts range for the bottom and top number when the user decides the range
     #will generate random number within range and return that number
     random_number = randint(range_low, range_high)
@@ -45,6 +45,11 @@ def players():
     return player_list
 
 def check_win(random_number, guessed_number, turns):
+    #makes a variable to see if anyone has won or not 0 = no win and 1 = win
+    win = 0
+    
     if random_number == guessed_number:
         print ("CONGRATULATIONS! You won the game the number you were looking for was", random_number)
         print ("it took", turns, "to win")
+        
+        return win
