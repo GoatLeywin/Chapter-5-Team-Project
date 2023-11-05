@@ -46,10 +46,13 @@ def players():
 
 def check_win(random_number, guessed_number, turns):
     #makes a variable to see if anyone has won or not 0 = no win and 1 = win
-    win = 0
     
     if random_number == guessed_number:
         print ("CONGRATULATIONS! You won the game the number you were looking for was", random_number)
-        print ("it took", turns, "to win")
+        print ("it took", turns, "turns to win")
+        win = 1
         
-        return win
+    else:
+        win = 0
+        
+    return win
