@@ -8,10 +8,7 @@ turns = 0
 def start():
     global range_low
     global range_high
-<<<<<<< Updated upstream
-=======
     global turns
->>>>>>> Stashed changes
     win = 0
     
     choice = function.menu()
@@ -20,10 +17,7 @@ def start():
         random_number = int(function.get_random_number(range_low, range_high))
         
         while win == 0:
-<<<<<<< Updated upstream
-=======
             turns = function.amount_of_turns(turns)
->>>>>>> Stashed changes
             for number in range(len(player_list)):
                 print (player_list[number], ' what is your guess? ', sep = '', end = '')
                 guessed_number = int(input(''))

@@ -61,18 +61,14 @@ def choose_range():
     
     range_list = []
     
-    range_low = int(input('Choose the lowest number the random number can be '))
-    range_high = int(input('Choose the highest number the random number can be '))
+    range_low = int(input('Choose the lowest number the random number can be: '))
+    range_high = int(input('Choose the highest number the random number can be: '))
     
     range_list.append(range_low)
     range_list.append(range_high)
     
-<<<<<<< Updated upstream
-    return range_list
-=======
     return range_list
 
 def amount_of_turns(turns):
     turns = turns + 1
     return turns
->>>>>>> Stashed changes
