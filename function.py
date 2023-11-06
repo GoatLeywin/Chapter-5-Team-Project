@@ -67,4 +67,12 @@ def choose_range():
     range_list.append(range_low)
     range_list.append(range_high)
     
+<<<<<<< Updated upstream
     return range_list
+=======
+    return range_list
+
+def amount_of_turns(turns):
+    turns = turns + 1
+    return turns
+>>>>>>> Stashed changes
