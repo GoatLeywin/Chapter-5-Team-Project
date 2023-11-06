@@ -49,7 +49,8 @@ def check_win(random_number, guessed_number, turns):
     
     if random_number == guessed_number:
         print ("CONGRATULATIONS! You won the game the number you were looking for was", random_number)
-        print ("it took", turns, "turns to win")
+        print ("it took", turns, "turn(s) to win")
+        print('')
         win = 1
         
     else:

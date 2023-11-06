@@ -23,6 +23,7 @@ def start():
                 guessed_number = int(input(''))
                 win = function.check_win(random_number, guessed_number, turns)
                 if win == 1:
+                    start()
                     break
         
     if choice == 2:
