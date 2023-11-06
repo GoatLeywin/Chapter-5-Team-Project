@@ -56,3 +56,15 @@ def check_win(random_number, guessed_number, turns):
         win = 0
         
     return win
+
+def choose_range():
+    
+    range_list = []
+    
+    range_low = int(input('Choose the lowest number the random number can be '))
+    range_high = int(input('Choose the highest number the random number can be '))
+    
+    range_list.append(range_low)
+    range_list.append(range_high)
+    
+    return range_list
