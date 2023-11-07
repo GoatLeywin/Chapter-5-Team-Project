@@ -22,9 +22,10 @@ def get_random_number(range_low, range_high):
 
 def get_feedback(random_number, guessed_number):
     if random_number > guessed_number:
-      print ("try guessing a bigger number")
+      print ("Try guessing a bigger number")
     if random_number < guessed_number:
-      print ("try guessing a smaller number")
+      print ("Try guessing a smaller number")
+      
   
 def players():
     #accepts no arguments
@@ -62,9 +63,18 @@ def choose_range():
     
     range_list = []
     
-    range_low = int(input('Choose the lowest number the random number can be: '))
-    range_high = int(input('Choose the highest number the random number can be: '))
+    range_low = input('Choose the lowest number the random number can be: ')
     
+    if type(range_low) != type(1):
+        print ('invalid choice must be an integer')
+        range_low = input('Choose the lowest number the random number can be: ')
+        
+    range_high = input('Choose the highest number the random number can be: ')
+    
+    if type(range_high) != type(1):
+        print ('invalid choice must be an integer')
+        range_high = input('Choose the highest number the random number can be: ')
+        
     range_list.append(range_low)
     range_list.append(range_high)
     
