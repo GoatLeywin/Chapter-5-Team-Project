@@ -12,6 +12,14 @@ def start():
     win = 0
     
     choice = function.menu()
+    
+    is_integer_choice = function.check_integer(choice)
+    while is_integer_choice == 0:
+        print ('invalid input must be integer')
+        choice = function.menu()
+        is_integer_choice = function.check_integer(choice)
+    choice = int(choice)
+    
     if choice == 1:
         player_list = function.players()
         change_range = input('Do you wish to change the range of numbers? (default 1-1000 answer "y" to change or "n" to not) ')
@@ -35,12 +43,15 @@ def start():
             turns = function.amount_of_turns(turns)
             for number in range(len(player_list)):
                 print (player_list[number], ' what is your guess? ', sep = '', end = '')
-                guessed_number = int(input(''))
+                guessed_number = input('')
                 
-                if type(guessed_number) != type(1):
-                    print ('invalid must input integer')
+                is_integer_guess = function.check_integer(guessed_number)
+                while is_integer_guess == 0:
+                    print ('invalid input must be integer')
                     print (player_list[number], ' what is your guess? ', sep = '', end = '')
-                    guessed_number = int(input(''))
+                    guessed_number = input('')
+                    is_integer_guess = function.check_integer(guessed_number)
+                guessed_number = int(guessed_number)
                 
                 if guessed_number < range_low:
                     print ('that guess is out of range guess again')

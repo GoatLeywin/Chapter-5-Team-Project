@@ -1,5 +1,23 @@
 import random
 from random import randint
+from multiprocessing.sharedctypes import Value
+
+def check_integer(prompt):
+    integer = 2
+    flag = True
+    
+    try:
+        # try converting to integer
+        int(prompt)
+    except ValueError:
+        flag = False
+    # flag check
+    if flag:
+        integer = 1
+    else:
+        integer = 0
+    
+    return integer
 
 def menu():
     #display menu accepts no arguments
@@ -10,7 +28,7 @@ def menu():
     print('2) Choose range')
     print('3) Exit game')
     
-    choice = int(input('Enter a selection: '))
+    choice = input('Enter a selection: ')
     return choice
 
 def get_random_number(range_low, range_high):
@@ -36,7 +54,14 @@ def players():
     #makes player list
     player_list = []
     
-    amount_of_players = int(input("How many players are there? "))
+    amount_of_players = input("How many players are there? ")
+    
+    is_integer_choice = check_integer(amount_of_players)
+    while is_integer_choice == 0:
+        print ('invalid input must be integer')
+        amount_of_players = input("How many players are there? ")
+        is_integer_choice = check_integer(amount_of_players)
+    amount_of_players = int(amount_of_players)
     
     for number in range(1, amount_of_players + 1):
         print ("What is player ", number, "'s name? ", sep = '', end = '')
@@ -65,15 +90,21 @@ def choose_range():
     
     range_low = input('Choose the lowest number the random number can be: ')
     
-    if type(range_low) != type(1):
-        print ('invalid choice must be an integer')
+    is_integer_choice = check_integer(range_low)
+    while is_integer_choice == 0:
+        print ('invalid input must be integer')
         range_low = input('Choose the lowest number the random number can be: ')
+        is_integer_choice = check_integer(range_low)
+    range_low = int(range_low)
         
     range_high = input('Choose the highest number the random number can be: ')
     
-    if type(range_high) != type(1):
-        print ('invalid choice must be an integer')
+    is_integer_choice = check_integer(range_high)
+    while is_integer_choice == 0:
+        print ('invalid input must be integer')
         range_high = input('Choose the highest number the random number can be: ')
+        is_integer_choice = check_integer(range_high)
+    range_high = int(range_high)
         
     range_list.append(range_low)
     range_list.append(range_high)
@@ -81,5 +112,6 @@ def choose_range():
     return range_list
 
 def amount_of_turns(turns):
+        
     turns = turns + 1
     return turns
